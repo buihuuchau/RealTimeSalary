@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lương theo thời gian thực</title>
-  <link rel="stylesheet" href="./css.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lương theo thời gian thực</title>
+        <link rel="stylesheet" href="./css.css" />
+    </head>
+    <body>
+        <!-- Vùng nhập thông tin (góc trên bên trái) -->
+        <div class="salary-input-container">
+            <!-- Nhập lương -->
+            <label for="salaryInput">Lương (VNĐ):</label>
+            <input
+                type="number"
+                id="salaryInput"
+                placeholder="Nhập lương"
+                value="12713000"
+            />
 
-  <!-- Input nhập lương (góc trên bên trái) -->
-  <div class="salary-input-container">
-    <label for="salaryInput">Lương (VNĐ):</label>
-    <input type="number" id="salaryInput" placeholder="Nhập lương" value="12800000">
-  </div>
+            <br />
 
-  <!-- Hiển thị tiền đang kiếm -->
-  <div id="result">0 VNĐ</div>
+            <!-- Nhập số ngày làm việc -->
+            <label for="numberOfDaysInput">Số ngày làm việc trong tuần:</label>
+            <input
+                type="number"
+                id="numberOfDaysInput"
+                placeholder="Nhập số ngày làm việc"
+                value="5"
+                min="1"
+                max="7"
+            />
 
-  <!-- Tiền rơi -->
-  <div class="money-container"></div>
+            <br />
 
-  <script src="./js.js"></script>
-</body>
+            <!-- Giờ làm buổi sáng -->
+            <label for="morningStart">Giờ bắt đầu sáng:</label>
+            <input type="time" id="morningStart" value="08:30" />
+
+            <label for="morningEnd">Giờ kết thúc sáng:</label>
+            <input type="time" id="morningEnd" value="12:00" />
+
+            <br />
+
+            <!-- Giờ làm buổi chiều -->
+            <label for="afternoonStart">Giờ bắt đầu chiều:</label>
+            <input type="time" id="afternoonStart" value="13:00" />
+
+            <label for="afternoonEnd">Giờ kết thúc chiều:</label>
+            <input type="time" id="afternoonEnd" value="17:30" />
+        </div>
+
+        <!-- Hiển thị tiền đang kiếm -->
+        <div id="result">0 VNĐ</div>
+
+        <!-- Tiền rơi -->
+        <div class="money-container"></div>
+
+        <script src="./js.js"></script>
+    </body>
 </html>
