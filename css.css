@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #a8edea, #fed6e3);
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Vùng nhập lương */
+.salary-input-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  opacity: 0; /* Ẩn mặc định */
+  transition: opacity 0.3s, pointer-events 0.3s;
+}
+
+.salary-input-container:hover {
+  opacity: 1;
+}
+
+/* Input */
+.salary-input-container input {
+  padding: 6px 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  opacity: 0; /* Mờ mặc định */
+  transition: opacity 0.3s, pointer-events 0.3s;
+}
+
+.salary-input-container:hover input {
+  opacity: 1;
+}
+
+/* Tiền đang kiếm - giữa ngang, cách top 75% */
+#result {
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
+  color: #008000;
+  opacity: 0.5;
+  z-index: 5;
+}
+
+/* Tiền rơi */
+.money-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.money {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.5;
+  }
+}
